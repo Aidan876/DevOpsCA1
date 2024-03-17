@@ -5,10 +5,10 @@
     build:
       jobs:
         - build:
-          filters:
-            branches:
-              only:
-                - main
+            filters:
+              branches:
+                only:
+                  - main
         - deploy:
             filters:
               branches:
@@ -30,7 +30,7 @@
         - restore_cache:
             key: dependency-cache-{{ checksum "package-lock.json" }}
         - run:
-            name: install-npm
+            name: install-npm-wee
             command: npm install
         - save_cache:
             key: dependency-cache-{{ checksum "package-lock.json" }}
